@@ -1,0 +1,50 @@
+/* ImageCarousel.css */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 1200px; /* optional */
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: orange;
+  }
+  

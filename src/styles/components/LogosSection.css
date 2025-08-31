@@ -1,0 +1,88 @@
+.logos-section {
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .logos-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  /* Desktop Grid */
+  .logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .logo-item img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .logo-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Mobile Carousel */
+  .logos-carousel {
+    display: none;
+  }
+  
+  .carousel-dots {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .logos-grid {
+      display: none;
+    }
+  
+    .logos-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 15px;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+    }
+  
+    .logo-item-carousel {
+      flex: 0 0 33.333%;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .logo-item-carousel img {
+      max-width: 100px;
+    }
+  
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 8px;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+    }
+  
+    .dot.active {
+      background-color: orange;
+    }
+  }
+  
