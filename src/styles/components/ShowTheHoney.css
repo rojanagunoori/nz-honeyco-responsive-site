@@ -1,0 +1,166 @@
+.show-honey-container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.show-honey-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Carousel */
+.carousel-wrapper {
+  position: relative;
+  gap: 20px;
+}
+
+.carousel-slide {
+  height: 480px;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-img {
+  max-width: 380px;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+ 
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-nav.left { left: 10px; }
+.carousel-nav.right { right: 10px; }
+
+/* Carousel Text */
+.carousel-text-left, .carousel-text-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+}
+
+.carousel-text-left {
+  left: 20px;
+  text-align: left;
+  animation-delay: 0s;
+}
+
+.carousel-text-right {
+  right: 20px;
+  text-align: right;
+  animation-delay: 0.3s;
+}
+
+.carousel-text-left h2, .carousel-text-left h3, .carousel-text-right p {
+  margin: 5px 0;
+  font-size: 34px;
+  font-weight: 600;
+  width: 250px;
+}
+
+/* Button below carousel */
+.carousel-button-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.carousel-button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* UL hover effect */
+.honey-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
+
+.honey-list li {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 3px;
+}
+
+.honey-list li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--hover-color);
+  transition: width 0.4s ease;
+}
+
+.honey-list li:hover::after,
+.honey-list li.active::after {
+  width: 100%;
+}
+
+/* Text Animation - Right to Left */
+.slide-animation {
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideInRight 0.6s forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .carousel-text-left {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .carousel-text-right {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+  }
+
+  .carousel-img {
+    width: 100px;
+    max-height: 150px;
+  }
+}
